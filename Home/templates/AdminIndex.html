@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "stylesheets/Homev2.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "stylesheets/css.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "stylesheets/business-starter-template.css" %}" />
+    <script src="{% static "js/jquery-3.js" %}"></script>
+    <script src="{% static "js/webflow.js" %}"></script>
+    <script src="{% static "js/webfont.js" %}"></script>
+    <!-- GMaps Library -->
+    <script src="{% static "js/gmaps.js" %}"></script>
+    <!-- Google Maps JS API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlidQ5amkoSdPUweyzO5UOdCYjSa4QQTk"></script>
+    <style>
+      #map {
+        width: 1000px;
+        height: 750px;
+        margin-top: 3%;
+        margin-left: 15%;
+      }
+    </style>
+  </head>
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K8DNWY5SD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2K8DNWY5SD');
+</script>
+
+  <body>
+
+    <div class="navigation-wrap" style="margin-top: 2%;">
+    <div id="imglogo" style="margin-left: 3%;"></div>
+    <div class="menu">
+    <nav role="navigation" class="navigation-items w-nav-menu">
+    <a href="/admin/ManageDatabase/" class="navigation-item w-nav-link">Database</a>
+    <a href="/admin/Support/1/" class="navigation-item w-nav-link">Support</a>
+    </nav>
+    </div>
+    </div>
+
+    <div id="map"></div>
+
+
+    <script>
+    /* Map Object */
+    var thisKey = "";
+    var latitudes = {{latitudes|safe}};
+    var longitudes = {{longitudes|safe}};
+    var length = latitudes.length;
+
+    var mapObj = new GMaps({
+        el: '#map',
+        lat: 39.73,
+        lng: 105,
+    });
+
+    var count = 0;
+    while (count < length) {
+        mapObj.addMarker({
+            lat: latitudes[count],
+            lng: longitudes[count],
+            title: 'User ' + count.toString(),
+            infoWindow: {
+                content: '<h4>User' + count.toString() + '</h4>',
+                maxWidth: 100
+            }
+        });
+        ++count;
+    }
+    </script>
+  </body>
+</html>

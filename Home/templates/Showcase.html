@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns#">
+<head>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "stylesheets/Homev2andcssandbusinessMini.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "stylesheets/ShowcaseMini.css" %}" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Iris Documents provides an easy to use application to complete your company's agreements and contracts using preset templates and work queues." />
+<meta property="og:title" content="Iris Documents - Free Document Signing Services" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://irisdocuments.com/" />
+<meta property="og:image" content="https://iris1-static.s3.amazonaws.com/static/stylesheets/images/datamap.jpg" />
+<title>Iris Documents - Free Document Signing Services</title>
+<link rel="canonical" href="https://irisdocuments.com/Showcase/">
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K8DNWY5SD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2K8DNWY5SD');
+</script>
+
+
+<body>
+
+<div class="navigation-wrap" style="margin-top: 2%;">
+<div id="imglogo" style="margin-left: 3%;"></div>
+<div class="menu">
+<nav role="navigation" class="navigation-items w-nav-menu">
+<a href="/" class="navigation-item w-nav-link">Home Page</a>
+</nav>
+</div>
+</div>
+
+<div id="heading">Templates</div>
+
+<div id="container">
+  <div id="leftbuttoncontainer">
+  <button class="button" id="leftbutton" onclick="plusDivs(-1)">&#10094;</button>
+  </div>
+
+  <div id="slidecontainer">
+
+  <div class="mySlides" id="slide1">
+    <div class="text-block">
+      <h4 style="text-align:center;">Go to the User Dashboard and click 'New Template' to create a new template.</h4>
+    </div>
+  </div>
+  <div class="mySlides" id="slide2">
+    <div class="text-block">
+      <h4 style="text-align:center;">Add as many users as you would like to the template. These users and their permissions will be used each time the template is selected.</h4>
+    </div>
+  </div>
+  <div class="mySlides" id="slide3">
+    <div class="text-block">
+      <h4 style="text-align:center;">Edit the Iris Document, selecting where you would like text and each signature to be placed after clicking the buttons.</h4>
+    </div>
+  </div>
+  <div class="mySlides" id="slide4">
+    <div class="text-block">
+      <h4 style="text-align:center;">After saving the template, you can now create a pre-defined Iris Document using this template.</h4>
+    </div>
+  </div>
+  <div class="mySlides" id="slide5">
+    <div class="text-block">
+      <h4 style="text-align:center;">Add the same number of users and specify their name and email in order. Each users signature location will be filled and sent.</h4>
+    </div>
+  </div>
+
+  </div>
+
+  <div id="rightbuttoncontainer">
+  <button class="button" id="rightbutton" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+</div>
+
+<div id="ParagraphContent">
+
+<br>
+<p class="paragraph">
+Agreements and contracts that your business uses with your clients can be easily implemented as a template. 
+Simply create the template from the User Dashboard menu and add each user, signifying whether they will be allowed
+to only view the document, sign the document, or edit the document. 
+</p>
+<br>
+<p class="paragraph">
+When you create a new Iris Document, select the name of the template you would like to use.
+Fill in each user in the numerical order they were added to the template, adding a name and email to the first user box
+to signify that all permissions and signatures of the first template user are to be used for this user in the document.
+</p>
+<br>
+<p class="paragraph">
+When you create the Iris Document you can also send additional files, set reminders, and schedule the document
+to be sent at a certain time. All text, brands, and signatures will be added automatically to the document from
+the preset template. The features available depend on the active subscription on your account. Click this <a href="/PlansAndPricing/">link</a> to view 
+a table which clearly lists the advantages of each subscription and their price range.
+</p>
+
+</div>
+
+</body>
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+  
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+</script>
+
+</html>

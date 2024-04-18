@@ -1,0 +1,87 @@
+<html>
+
+<head>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "stylesheets/Homev2.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "stylesheets/css.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "stylesheets/business-starter-template.css" %}" />
+<script src="{% static "js/jquery-3.js" %}"></script>
+<script src="{% static "js/webflow.js" %}"></script>
+<script src="{% static "js/webfont.js" %}"></script>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Iris Documents - Free Document Signing Services</title>
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K8DNWY5SD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2K8DNWY5SD');
+</script>
+
+
+<body>
+
+<div class="navigation-wrap" style="margin-top: 2%;">
+<div id="imglogo" style="margin-left: 3%;"></div>
+<div class="menu">
+<nav role="navigation" class="navigation-items w-nav-menu">
+<a href="/admin/Map/" class="navigation-item w-nav-link">Map</a>
+<a href="/admin/ManageDatabase/" class="navigation-item w-nav-link">Database</a>
+</nav>
+</div>
+</div>
+
+<div id="LeftPanel" style="width: 30%;height: 100%;float: left;margin-top: 2%;">
+    <a href="/admin/Support/{{page}}/1/"><div style="width: 100%;height: 9%;text-align: center;padding: 1%;">{{ticketNames.0}}<br>{{ticketEmails.0}}</div></a>
+    <a href="/admin/Support/{{page}}/2/"><div style="width: 100%;height: 9%;text-align: center;padding: 1%;">{{ticketNames.1}}<br>{{ticketEmails.1}}</div></a>
+    <a href="/admin/Support/{{page}}/3/"><div style="width: 100%;height: 9%;text-align: center;padding: 1%;">{{ticketNames.2}}<br>{{ticketEmails.2}}</div></a>
+    <a href="/admin/Support/{{page}}/4/"><div style="width: 100%;height: 9%;text-align: center;padding: 1%;">{{ticketNames.3}}<br>{{ticketEmails.3}}</div></a>
+    <a href="/admin/Support/{{page}}/5/"><div style="width: 100%;height: 9%;text-align: center;padding: 1%;">{{ticketNames.4}}<br>{{ticketEmails.4}}</div></a>
+    <a href="/admin/Support/{{page}}/6/"><div style="width: 100%;height: 9%;text-align: center;padding: 1%;">{{ticketNames.5}}<br>{{ticketEmails.5}}</div></a>
+    <a href="/admin/Support/{{page}}/7/"><div style="width: 100%;height: 9%;text-align: center;padding: 1%;">{{ticketNames.6}}<br>{{ticketEmails.6}}</div></a>
+    <a href="/admin/Support/{{page}}/8/"><div style="width: 100%;height: 9%;text-align: center;padding: 1%;">{{ticketNames.7}}<br>{{ticketEmails.7}}</div></a>
+    <a href="/admin/Support/{{page}}/9/"><div style="width: 100%;height: 9%;text-align: center;padding: 1%;">{{ticketNames.8}}<br>{{ticketEmails.8}}</div></a>
+    <a href="/admin/Support/{{page}}/10/"><div style="width: 100%;height: 9%;text-align: center;padding: 1%;">{{ticketNames.9}}<br>{{ticketEmails.9}}</div></a>
+    <a href="/admin/Support/{{nextPage.1}}/"><div style="width: 100%;height: 5%;text-align: center;padding: 1%;">{{nextPage.0}}</div></a>
+    <a href="/admin/Support/{{lastPage.1}}/"><div style="width: 100%;height: 5%;text-align: center;padding: 1%;">{{lastPage.0}}</div></a>
+</div>
+
+<div id="RightPanel" style="width: 50%;height: 100%;float: left;margin-top: 2%;">
+
+<div id="UpperRightPanel" style="width:100%;height:66%;">
+<form action="/admin/Support/Submit/" method="post" style="width: 66%; height: 66%;margin-left: 17%;margin-right: 17%;">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br><br>
+
+    <textarea id="ticket" name="ticket" rows="20" cols="100">
+    </textarea>
+    <br><br>
+
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+<div id="LowerRightPanel" style="width:100%;height:34%;text-align: center;margin-top: 20%;">
+    <h3>{{ticketInfo.0}}</h3>
+    <br>
+    <h5>{{ticketInfo.1}}</h5>
+    <br>
+    <p>{{ticketInfo.2}}</p>
+</div>
+</div>
+
+</body>
+
+</html>
